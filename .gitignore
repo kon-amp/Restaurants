@@ -1,0 +1,64 @@
+## Build Results
+bin/
+obj/
+out/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vs/
+
+## NuGet Packages
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+## Visual Studio Cache
+.vscode/
+.vs/
+.idea/
+
+## .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.dbmdl
+*.jfm
+
+## Logs and Database
+*.log
+*.ldf
+*.mdf
+
+## Entity Framework
+Migrations/
+
+## ASP.NET Stuff
+appsettings*.json
+secrets.json
+
+## Others
+.env
+node_modules/
+wwwroot/
+
+## OS-Specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+## Temporary Files
+*.tmp
+*.bak
+*.swp
+*.swo
+*.orig
+
+## Rider (JetBrains IDE)
+.idea/
+*.sln.iml
