@@ -13,17 +13,21 @@ public class WeatherForecastController : ControllerBase {
         _weatherForecastService = weatherForecastService;
     }
 
-    [HttpGet("{take}")]
-    public IEnumerable<WeatherForecast> Get([FromQuery] int max,[FromRoute] int take)
+    [HttpGet]
+    public IEnumerable<WeatherForecast> Get()
     {
         var result = _weatherForecastService.Get();
         return result;
     }
 
-    [HttpGet("currentDay")]
-    public WeatherForecast GetCurrentDayForecast() {
+    [HttpGet("{take}/currentDay")]
+    public IActionResult GetCurrentDayForecast([FromQuery] int max, [FromRoute] int take) {
         var result = _weatherForecastService.Get().First();
-        return result;
+
+        //Response.StatusCode = 400;
+
+        //NotFound, OK, BadRequest, StatusCode(400, result) 
+        return NotFound(result);
     }
 
     [HttpPost]
