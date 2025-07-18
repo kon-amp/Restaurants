@@ -1,10 +1,31 @@
 @Restaurants.API_HostAddress = https://localhost:7133
 
-GET {{Restaurants.API_HostAddress}}/api/weatherforecast/23/currentDay?max=15
+POST {{Restaurants.API_HostAddress}}/api/weatherforecast/generate?maxResults=10
+Content-Type: application/json 
+
+{
+  "minTempRange": 0,
+  "maxTempRange": 20
+}
 
 ###
 
-POST {{Restaurants.API_HostAddress}}/api/weatherforecast
+POST {{Restaurants.API_HostAddress}}/api/weatherforecast/generate?maxResults=10
 Content-Type: application/json 
 
-"Kostis"
+{
+  "minTempRange": 20,
+  "maxTempRange": 0
+}
+
+
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/weatherforecast/generate?maxResults=-10
+Content-Type: application/json 
+
+{
+  "minTempRange": 20,
+  "maxTempRange": 0
+}

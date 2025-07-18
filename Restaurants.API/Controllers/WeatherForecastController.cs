@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Restaurants.API.Controllers;
@@ -13,25 +14,21 @@ public class WeatherForecastController : ControllerBase {
         _weatherForecastService = weatherForecastService;
     }
 
-    [HttpGet]
-    public IEnumerable<WeatherForecast> Get()
+    [HttpPost("generate")]
+    public IActionResult Generate([FromQuery] int maxResults, [FromBody] TemperatureRequest tempParams)
     {
-        var result = _weatherForecastService.Get();
-        return result;
-    }
+        string? error;
+        if (maxResults < 0) {
+            error = "Max results cannot be smaller than 0";
+            return BadRequest(error);
+        }
+        if (tempParams.MaxTempRange < tempParams.MinTempRange) {
+            error = "Max temp cannot be smaller than min temperature";
+            return BadRequest(error);
+        }
 
-    [HttpGet("{take}/currentDay")]
-    public IActionResult GetCurrentDayForecast([FromQuery] int max, [FromRoute] int take) {
-        var result = _weatherForecastService.Get().First();
+        var result = _weatherForecastService.Get(maxResults, tempParams.MinTempRange, tempParams.MaxTempRange);
 
-        //Response.StatusCode = 400;
-
-        //NotFound, OK, BadRequest, StatusCode(400, result) 
-        return NotFound(result);
-    }
-
-    [HttpPost]
-    public string Hello([FromBody] string name) {
-        return $"Hello {name}";
+        return Ok(result);
     }
 }
