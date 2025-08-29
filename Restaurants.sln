@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.API", "Restaurants.API\Restaurants.API.csproj", "{496C6D9C-916A-448F-BF73-432A2A823A8F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2CCC9061-4CCF-445B-96AB-5D830C5A5E4D} = {2CCC9061-4CCF-445B-96AB-5D830C5A5E4D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Domain", "Restaurants.Domain\Restaurants.Domain.csproj", "{AD929DFC-FD0A-4130-8FCE-6F5E22F5281D}"
 EndProject
