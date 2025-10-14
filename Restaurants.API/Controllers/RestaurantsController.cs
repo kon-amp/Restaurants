@@ -13,7 +13,7 @@ public class RestaurantsController(IRestaurantsService restaurantsService) : Con
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(int id) {
+    public async Task<IActionResult> GetById([FromRoute]int id) {
         var restaurant = await restaurantsService.GetRestaurantById(id);
         return Ok(restaurant);
     }
