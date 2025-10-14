@@ -27,12 +27,18 @@ internal static class WebApplicationExtensions {
             // Run database seeding (e.g., initial data creation).
             await seeder.Seed();
         }
-
+        
         // --- Configure the HTTP request pipeline ---
+        if (app.Environment.IsDevelopment()) {
+            app.UseDeveloperExceptionPage();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Restaurants"));
+        }
 
         // Redirect all HTTP requests to HTTPS for security.
         app.UseHttpsRedirection();
 
+        app.UseAuthentication();
         // Add authorization middleware (checks user access before hitting controllers).
         app.UseAuthorization();
 
