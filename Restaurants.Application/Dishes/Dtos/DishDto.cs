@@ -8,13 +8,19 @@ public class DishDto {
     public decimal Price { get; set; }
     public int? KiloCaleries { get; set; }
 
-    public static DishDto FromEntity(Dish dish) {
-        return new() {
-            Id = dish.Id,
-            Name = dish.Name,
-            Description = dish.Description,
-            Price = dish.Price,
-            KiloCaleries = dish.KiloCaleries,
-        };
-    }
+
+    #region Manual mapping example (if not using AutoMapper)
+    // This static factory method shows how to map a Dish entity to DishDto manually.
+    // It is not used in the current project — kept for educational/reference purposes.
+    //
+    //public static DishDto FromEntity(Dish dish) {
+    //    return new() {
+    //        Id = dish.Id,
+    //        Name = dish.Name,
+    //        Description = dish.Description,
+    //        Price = dish.Price,
+    //        KiloCaleries = dish.KiloCaleries,
+    //    };
+    //}
+    #endregion
 }
