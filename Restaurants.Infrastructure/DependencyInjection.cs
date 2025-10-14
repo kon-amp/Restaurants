@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Migrations.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -11,7 +10,7 @@ using Restaurants.Infrastructure.Seeders;
 namespace Restaurants.Infrastructure; 
 public static class DependencyInjection {
 
-    public static IServiceCollection AddInfrastructureLayer(this IServiceCollection services, ConfigurationManager configuration, IHostEnvironment hostEnvironment) {
+    public static IServiceCollection AddInfrastructureLayer(this IServiceCollection services, IConfiguration configuration, IHostEnvironment hostEnvironment) {
 
         services.AddRestaurantsDbContext(configuration)
                 .AddRepositories()
@@ -20,7 +19,7 @@ public static class DependencyInjection {
         return services;
     }
 
-    public static IServiceCollection AddRestaurantsDbContext(this IServiceCollection services, ConfigurationManager configuration) {
+    public static IServiceCollection AddRestaurantsDbContext(this IServiceCollection services, IConfiguration configuration) {
         var connectionString = configuration.GetConnectionString("RestaurantsDb");
         services.AddDbContext<RestaurantsDbContext>(options => options.UseSqlServer(connectionString));
 

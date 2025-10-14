@@ -18,18 +18,28 @@ internal static class WebApplicationExtensions {
     }
 
     internal static async Task<WebApplication> ConfigurePipeline(this WebApplication app) {
-        var scope = app.Services.CreateScope();
-        var seeder = scope.ServiceProvider.GetRequiredService<IRestaurantSeeder>();
+        // Create a temporary DI scope.
+        // This allows us to safely resolve and use scoped services (like DbContext)
+        // outside of a normal HTTP request.
+        using (var scope = app.Services.CreateScope()) {
+            var seeder = scope.ServiceProvider.GetRequiredService<IRestaurantSeeder>();
 
-        await seeder.Seed();
-        // Configure the HTTP request pipeline.
+            // Run database seeding (e.g., initial data creation).
+            await seeder.Seed();
+        }
 
+        // --- Configure the HTTP request pipeline ---
+
+        // Redirect all HTTP requests to HTTPS for security.
         app.UseHttpsRedirection();
 
+        // Add authorization middleware (checks user access before hitting controllers).
         app.UseAuthorization();
 
+        // Map controller endpoints so they can handle incoming HTTP requests.
         app.MapControllers();
 
+        // Return the configured app so it can be run.
         return app;
     }
 }

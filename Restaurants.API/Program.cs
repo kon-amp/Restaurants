@@ -1,6 +1,6 @@
 using Restaurants.API.Extensions;
-using Restaurants.Infrastructure.Seeders;
 
+namespace Restaurants.API; 
 public class Program {
     public static async Task Main(string[] args) {
         var builder = WebApplication.CreateBuilder(args);

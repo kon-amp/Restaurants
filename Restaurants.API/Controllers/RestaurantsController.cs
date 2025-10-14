@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Restaurants.Application.Restaurants;
-using System.Reflection.Metadata.Ecma335;
-using System.Threading.Tasks;
 
 namespace Restaurants.API.Controllers;
 
@@ -12,5 +10,11 @@ public class RestaurantsController(IRestaurantsService restaurantsService) : Con
     public async Task<IActionResult> GetAll() {
         var restaurants = await restaurantsService.GetAllRestaurants();
         return Ok(restaurants);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id) {
+        var restaurant = await restaurantsService.GetRestaurantById(id);
+        return Ok(restaurant);
     }
 }
