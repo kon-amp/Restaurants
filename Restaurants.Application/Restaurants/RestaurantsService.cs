@@ -13,7 +13,7 @@ internal class RestaurantsService(IRestaurantsRepository restaurantsRepository,
 
     public async Task<Restaurant?> GetRestaurantById(int id) {
         logger.LogInformation("Getting restaurant if exists");
-        var restaurant = await restaurantsRepository.GetById(id);
+        var restaurant = await restaurantsRepository.GetByIdAsync(id);
         return restaurant;
     }
 }
