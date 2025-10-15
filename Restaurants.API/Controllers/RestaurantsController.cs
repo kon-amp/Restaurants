@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Restaurants.Application.Restaurants.Commands.CreateRestaurant;
 using Restaurants.Application.Restaurants.Commands.DeleteRestaurant;
+using Restaurants.Application.Restaurants.Commands.UpdateRestaurant;
 using Restaurants.Application.Restaurants.Queries.GetAllRestaurants;
 using Restaurants.Application.Restaurants.Queries.GetRestaurantById;
 
@@ -45,8 +46,20 @@ public class RestaurantsController(
         return NotFound();
     }
 
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> UpdateRestaurant([FromRoute] int id, [FromBody] UpdateRestaurantCommand command) {
+        command.Id = id;
+        var isUpdated = await mediator.Send(command);
+
+        if (isUpdated) {
+            return NoContent();
+        }
+
+        return NotFound();
+    }
+
     [HttpPost]
-    public async Task<IActionResult> CreateRestaurant([FromBody]CreateRestaurantCommand command) {
+    public async Task<IActionResult> CreateRestaurant([FromBody] CreateRestaurantCommand command) {
         #region Manual request validation (used if [ApiController] is not applied)
         // If the [ApiController] attribute isn’t used, we need to manually check 
         // whether the ModelState is valid before processing the request.
