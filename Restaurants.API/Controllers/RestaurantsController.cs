@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Restaurants.API.Extensions;
 using Restaurants.Application.Restaurants;
 using Restaurants.Application.Restaurants.Dtos;
 
@@ -10,7 +14,10 @@ namespace Restaurants.API.Controllers;
 // if no other source is specified.
 [ApiController]
 [Route("api/restaurants")]
-public class RestaurantsController(IRestaurantsService restaurantsService) : ControllerBase {
+public class RestaurantsController(
+    IRestaurantsService restaurantsService, 
+    IValidator<CreateRestaurantDto> createValidator) : ControllerBase {
+
     [HttpGet]
     public async Task<IActionResult> GetAll() {
         var restaurants = await restaurantsService.GetAllRestaurants();
