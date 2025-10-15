@@ -9,8 +9,8 @@ namespace Restaurants.Application;
 public static class DependencyInjection {
     public static IServiceCollection AddApplicationLayer(this IServiceCollection services) {
         var applicationAssembly = Assembly.GetExecutingAssembly();
-       
-        services.AddScoped<IRestaurantsService, RestaurantsService>();
+        
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(applicationAssembly));
 
         services.AddAutoMapper(cfg => { }, applicationAssembly);
 

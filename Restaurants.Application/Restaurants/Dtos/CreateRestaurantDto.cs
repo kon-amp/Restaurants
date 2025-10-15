@@ -1,4 +1,15 @@
-﻿namespace Restaurants.Application.Restaurants.Dtos; 
+﻿// ============================================================================
+//  ⚠️  HISTORICAL FILE - FOR REFERENCE ONLY
+// ----------------------------------------------------------------------------
+//  This file is no longer used in the current application logic.
+//  It is kept in the repository for documentation and learning purposes.
+//
+//  Do NOT modify or include this file in new features.
+// ============================================================================
+
+namespace Restaurants.Application.Restaurants.Dtos;
+
+[Obsolete("This class is kept for reference only. Do not use.", error: true)]
 public class CreateRestaurantDto {
     // Note: DataAnnotations kept/commented for study purposes only.
     // Actual validation is handled by FluentValidation.

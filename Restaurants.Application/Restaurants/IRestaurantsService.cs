@@ -1,7 +1,9 @@
 ﻿using Restaurants.Application.Restaurants.Dtos;
-using Restaurants.Domain.Entities;
 
-namespace Restaurants.Application.Restaurants; 
+namespace Restaurants.Application.Restaurants;
+
+[Obsolete("This interface is kept only for historical reference. " +
+          "The project now uses CQRS with MediatR. Avoid using this interface in new code.")]
 public interface IRestaurantsService {
     Task<IEnumerable<RestaurantDto>> GetAllRestaurants();
 
