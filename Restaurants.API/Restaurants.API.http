@@ -9,6 +9,10 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants/1
 
 ###
 
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/145
+
+###
+
 POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 
