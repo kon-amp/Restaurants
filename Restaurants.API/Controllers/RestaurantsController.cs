@@ -15,8 +15,7 @@ namespace Restaurants.API.Controllers;
 [ApiController]
 [Route("api/restaurants")]
 public class RestaurantsController(
-    IRestaurantsService restaurantsService, 
-    IValidator<CreateRestaurantDto> createValidator) : ControllerBase {
+    IRestaurantsService restaurantsService) : ControllerBase {
 
     [HttpGet]
     public async Task<IActionResult> GetAll() {

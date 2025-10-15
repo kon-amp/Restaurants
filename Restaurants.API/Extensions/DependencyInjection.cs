@@ -4,7 +4,7 @@ using Restaurants.API.Filters;
 
 namespace Restaurants.API.Extensions;
 public static class DependencyInjection {
-    public static IServiceCollection AddPresentationLayer(this IServiceCollection services, IConfiguration configuration) {
+    public static IServiceCollection AddPresentationLayer(this IServiceCollection services) {
         services
             .AddControllers(options => {
                 options.Filters.Add<ValidationFilter>();

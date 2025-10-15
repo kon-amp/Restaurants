@@ -9,8 +9,8 @@ internal static class WebApplicationExtensions {
 
         // Add clean architecture layers.
         builder.Services
-               .AddPresentationLayer(configuration)
-               .AddApplicationLayer(configuration)
+               .AddPresentationLayer()
+               .AddApplicationLayer()
                .AddInfrastructureLayer(configuration, builder.Environment);
 
         // Build a WebApplication instance
