@@ -2,7 +2,6 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 using Restaurants.Application.Abstractions.Repositories;
-using Restaurants.Domain.Entities;
 
 namespace Restaurants.Application.Restaurants.Commands.UpdateRestaurant;
 public class UpdateRestaurantCommandHandler(ILogger<UpdateRestaurantCommandHandler> logger,
