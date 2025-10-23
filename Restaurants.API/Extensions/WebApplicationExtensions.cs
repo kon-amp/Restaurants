@@ -1,6 +1,7 @@
-﻿using Restaurants.Infrastructure.Seeders;
+﻿using Restaurants.API.Middlewares;
 using Restaurants.Application;
 using Restaurants.Infrastructure;
+using Restaurants.Infrastructure.Seeders;
 using Serilog;
 using Serilog.Events;
 
@@ -41,6 +42,8 @@ internal static class WebApplicationExtensions {
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Restaurants"));
         }
+
+        app.UseMiddleware<ErrorHandlingMiddleware>();
 
         app.UseSerilogRequestLogging();
 

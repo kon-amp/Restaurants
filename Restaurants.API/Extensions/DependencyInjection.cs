@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 using Restaurants.API.Filters;
+using Restaurants.API.Middlewares;
 
 namespace Restaurants.API.Extensions;
 public static class DependencyInjection {
@@ -19,6 +20,8 @@ public static class DependencyInjection {
         services.AddSwaggerGen(c => {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPISample", Version = "v1" });
         });
+
+        services.AddScoped<ErrorHandlingMiddleware>();
 
         return services;
     }
