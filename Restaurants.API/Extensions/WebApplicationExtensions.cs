@@ -1,6 +1,8 @@
 ﻿using Restaurants.Infrastructure.Seeders;
 using Restaurants.Application;
 using Restaurants.Infrastructure;
+using Serilog;
+using Serilog.Events;
 
 namespace Restaurants.API.Extensions;
 internal static class WebApplicationExtensions {
@@ -12,6 +14,15 @@ internal static class WebApplicationExtensions {
                .AddPresentationLayer()
                .AddApplicationLayer()
                .AddInfrastructureLayer(configuration, builder.Environment);
+
+        //  
+        builder.Host.UseSerilog((context, configuration) => 
+            configuration
+                // 
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Information)
+                .WriteTo.Console(outputTemplate: "[{Timestamp:dd-MM HH:mm:ss} {Level:u3}] |{SourceContext}| {NewLine}{Message:lj}{NewLine}{Exception}")
+        );
 
         // Build a WebApplication instance
         return builder.Build();
@@ -34,6 +45,8 @@ internal static class WebApplicationExtensions {
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Restaurants"));
         }
+
+        app.UseSerilogRequestLogging();
 
         // Redirect all HTTP requests to HTTPS for security.
         app.UseHttpsRedirection();

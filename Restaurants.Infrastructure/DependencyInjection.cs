@@ -21,7 +21,10 @@ public static class DependencyInjection {
 
     public static IServiceCollection AddRestaurantsDbContext(this IServiceCollection services, IConfiguration configuration) {
         var connectionString = configuration.GetConnectionString("RestaurantsDb");
-        services.AddDbContext<RestaurantsDbContext>(options => options.UseSqlServer(connectionString));
+        services.AddDbContext<RestaurantsDbContext>(options => 
+            options.UseSqlServer(connectionString)
+                   .EnableSensitiveDataLogging()
+        );
 
         return services;
     }
