@@ -31,6 +31,7 @@ public static class DependencyInjection {
 
     public static IServiceCollection AddRepositories(this IServiceCollection services) {
         services.AddScoped<IRestaurantsRepository, RestaurantsRepository>();
+        services.AddScoped<IDishesRepository, DishesRepository>();
 
         return services;
     }
