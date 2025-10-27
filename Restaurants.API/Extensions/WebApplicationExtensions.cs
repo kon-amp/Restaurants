@@ -44,6 +44,7 @@ internal static class WebApplicationExtensions {
         }
 
         app.UseMiddleware<ErrorHandlingMiddleware>();
+        app.UseMiddleware<RequestTimeLoggingMiddleware>();
 
         app.UseSerilogRequestLogging();
 

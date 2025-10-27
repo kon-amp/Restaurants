@@ -22,6 +22,7 @@ public static class DependencyInjection {
         });
 
         services.AddScoped<ErrorHandlingMiddleware>();
+        services.AddScoped<RequestTimeLoggingMiddleware>();
 
         return services;
     }
