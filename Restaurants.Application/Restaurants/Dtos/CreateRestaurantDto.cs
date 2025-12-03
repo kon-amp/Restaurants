@@ -1,0 +1,36 @@
+﻿// ============================================================================
+//  ⚠️  HISTORICAL FILE - FOR REFERENCE ONLY
+// ----------------------------------------------------------------------------
+//  This file is no longer used in the current application logic.
+//  It is kept in the repository for documentation and learning purposes.
+//
+//  Do NOT modify or include this file in new features.
+// ============================================================================
+
+namespace Restaurants.Application.Restaurants.Dtos;
+
+[Obsolete("This class is kept for reference only. Do not use.", error: true)]
+public class CreateRestaurantDto {
+    // Note: DataAnnotations kept/commented for study purposes only.
+    // Actual validation is handled by FluentValidation.
+
+    //[StringLength(100, MinimumLength = 3)]
+    public string Name { get; set; } = default!;
+    public string Description { get; set; } = default!;
+
+    //[Required(ErrorMessage = "Insert a valid category")]
+    public string Category { get; set; } = default!;
+    public bool HasDelivery { get; set; }
+
+    //[EmailAddress(ErrorMessage = "Please provide a valid email address")]
+    public string? ContactEmail { get; set; }
+
+    //[Phone(ErrorMessage = "Please provide a valid phone number")]
+    public string? ContactNumber { get; set; }
+
+    public string? City { get; set; }
+    public string? Street { get; set; }
+
+    //[RegularExpression(@"^\\d{2}-\d{3}$", ErrorMessage = "Please provide a valid postal code (XX-XXX).")]
+    public string? PostalCode { get; set; }
+}
