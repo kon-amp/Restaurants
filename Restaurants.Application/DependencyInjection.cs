@@ -1,8 +1,6 @@
 ﻿using FluentValidation;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Restaurants.Application.Abstractions.User;
-using Restaurants.Application.Restaurants;
 using Restaurants.Application.User;
 using System.Reflection;
 

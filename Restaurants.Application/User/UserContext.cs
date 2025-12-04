@@ -4,7 +4,7 @@ using System.Security.Claims;
 
 namespace Restaurants.Application.User;
 public class UserContext(IHttpContextAccessor httpContextAccessor) : IUserContext {
-    public CurrentUser? CurrentUser() {
+    public CurrentUser? GetCurrentUser() {
         var user = (httpContextAccessor?.HttpContext?.User)
             ?? throw new InvalidOperationException("User context is not present.");
 
