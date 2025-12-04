@@ -52,7 +52,7 @@ internal static class WebApplicationExtensions {
         app.UseHttpsRedirection();
 
         // Expose Endpoints to register the user to login,reset password, etc
-        app.MapIdentityApi<ApplicationUser>();
+        app.MapGroup("api/identity").MapIdentityApi<ApplicationUser>();
 
         app.UseAuthentication();
         // Add authorization middleware (checks user access before hitting controllers).
