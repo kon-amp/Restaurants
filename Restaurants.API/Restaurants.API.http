@@ -85,3 +85,23 @@ GET {{Restaurants.API_HostAddress}}/api/restaurant/2/dishes
 ###
 
 GET {{Restaurants.API_HostAddress}}/api/restaurant/1/dishes/2
+
+###
+
+POST {{Restaurants.API_HostAddress}}/register
+Content-Type: application/json
+
+{
+  "email": "kwsabas07@gmail.com",
+  "password": "Password1!"
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/login
+Content-Type: application/json
+
+{
+  "email": "kwsabas07@gmail.com",
+  "password": "Password1!"
+}

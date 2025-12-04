@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Restaurants.Application.Abstractions.Repositories;
+using Restaurants.Infrastructure.Identity;
 using Restaurants.Infrastructure.Persistence;
 using Restaurants.Infrastructure.Repositories;
 using Restaurants.Infrastructure.Seeders;
@@ -13,9 +14,16 @@ public static class DependencyInjection {
     public static IServiceCollection AddInfrastructureLayer(this IServiceCollection services, IConfiguration configuration, IHostEnvironment hostEnvironment) {
 
         services.AddRestaurantsDbContext(configuration)
+                .AddIdentityLayer()
                 .AddRepositories()
                 .AddSeedData();
+        
+        return services;
+    }
 
+    public static IServiceCollection AddIdentityLayer(this IServiceCollection services) {
+        services.AddIdentityApiEndpoints<ApplicationUser>()
+                .AddEntityFrameworkStores<RestaurantsDbContext>();
         return services;
     }
 

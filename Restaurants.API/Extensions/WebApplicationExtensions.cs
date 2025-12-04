@@ -1,9 +1,9 @@
 ﻿using Restaurants.API.Middlewares;
 using Restaurants.Application;
 using Restaurants.Infrastructure;
+using Restaurants.Infrastructure.Identity;
 using Restaurants.Infrastructure.Seeders;
 using Serilog;
-using Serilog.Events;
 
 namespace Restaurants.API.Extensions;
 internal static class WebApplicationExtensions {
@@ -50,6 +50,9 @@ internal static class WebApplicationExtensions {
 
         // Redirect all HTTP requests to HTTPS for security.
         app.UseHttpsRedirection();
+
+        // Expose Endpoints to register the user to login,reset password, etc
+        app.MapIdentityApi<ApplicationUser>();
 
         app.UseAuthentication();
         // Add authorization middleware (checks user access before hitting controllers).
