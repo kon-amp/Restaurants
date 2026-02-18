@@ -14,7 +14,7 @@ internal static class WebApplicationExtensions {
         builder.Services
                .AddPresentationLayer()
                .AddApplicationLayer()
-               .AddInfrastructureLayer(configuration, builder.Environment);
+               .AddInfrastructureLayer(configuration);
 
         // Add Logging Mechanism
         builder.Host.UseSerilog((context, configuration) =>

@@ -17,7 +17,7 @@ public static class DependencyInjection {
         services.AddValidatorsFromAssembly(applicationAssembly);
 
         services.AddScoped<IUserContext, UserContext>();
-        services.AddHttpContextAccessor();
+        
 
         return services;
     }

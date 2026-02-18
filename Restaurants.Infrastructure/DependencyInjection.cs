@@ -13,13 +13,15 @@ using Restaurants.Infrastructure.Seeders;
 namespace Restaurants.Infrastructure; 
 public static class DependencyInjection {
 
-    public static IServiceCollection AddInfrastructureLayer(this IServiceCollection services, IConfiguration configuration, IHostEnvironment hostEnvironment) {
+    public static IServiceCollection AddInfrastructureLayer(this IServiceCollection services, IConfiguration configuration) {
 
         services.AddRestaurantsDbContext(configuration)
                 .AddIdentityLayer()
                 .AddRepositories()
                 .AddSeedData();
-        
+
+        services.AddHttpContextAccessor();
+
         return services;
     }
 
