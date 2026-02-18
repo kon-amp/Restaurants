@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,7 +25,9 @@ public static class DependencyInjection {
 
     public static IServiceCollection AddIdentityLayer(this IServiceCollection services) {
         services.AddIdentityApiEndpoints<ApplicationUser>()
-                .AddEntityFrameworkStores<RestaurantsDbContext>();
+                .AddEntityFrameworkStores<RestaurantsDbContext>()
+                .AddRoles<IdentityRole>();
+
 
         services.AddScoped<IApplicationUser, ApplicationUser>();
         services.AddScoped<IApplicationUserStore, ApplicationUserStore>();

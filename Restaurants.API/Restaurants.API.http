@@ -1,6 +1,6 @@
 @host = https://localhost
 @port = 7133
-@token = CfDJ8AVetrx8sTtOnnXH71IGF9ZruMZbHm9O8ComNUoIKCip97TwpStvpsLbUVHUgUwKrVM4qGjhDSKNJZl3RbhdCXKR7DjSDdXOVocZOsZ6gUc4alZ6fVKotdvVkUcPZDqJjCEnJwD8JiqgDoylHal9tAjtelUpV_DMAZ6aXuz4O7cOU4I1UKnGcW0pLBvIDepSPbwsevMe3UjVL8k1RvUgEu977EQvLTkknz1s37WHWjBsYmhmOaX6RYJtj4EUwq-op8oUuhnEKkJ9fJUoa5sMRuVSdHY69HVAi0PfE-Wzg9j5WtaRxMF3dw9SulRjVuPGuvdyAgfv_wxJa_CJbGl6ETZDzyKpeaqWtMX9FyVGgic6nwcvanx07tGFuEIi4RNXj_IJ1-p5Tf-3CdSYXJrboe1CuiIRTsfHOGSQIMMUN5OylcI22dejxAIfkQyaF2LQIkfmUI93qjVbCmT_CRoLmN5Eq9I_jx5guDgePzaoxOUuAypku_93BjtqhEWG_lhjG-5nnvEYxEJMk96-UNXFINcrNtAFP4TSisvq6ou58osd7xpUu7XlE5gCZ8C5ymy2VRqqgwYJGZpmSE9lChZV8nf18v2lkBTnXKapvsGtNqfAxmNioZW12eH6LKJ9Lsf_GT1hXCyfFGCQYK96w69KrP6K4WCL0CcbXqmkZTZu0UrIqH-Ngsh8tu7In4_ZA6dmPm5q9qHimtFACQkVgQR4AA4
+@token = CfDJ8NNIWtzFBL1OmKKH1Pn4YSKJZM_ZYX_x9tCZyR_Alro0tEzejOiFre8-BRsiQU_Z9AVKpn_aJbADR0UwTzq22or54JCmYdHS3cYwEivcsFEq1EDxvWGZU7SMycEQt_VtSHYMpway9kxqBygBEZA7fIIeUU1pYjlcE3mpOVukGcgcHxAGoJB7fNxHPq9NKF00kHyQarxKDlXAiQmJ_ZyPDHu4QutDDBIe9hFpPveTgA8XMnmf5PjcwH7XIhjSc2voJTr1goB1yxPqO50mkVykXhhWV0xEF0bA7Cl_CM9BLkioJ8L--adZ3ig-AaLY7jWQ7BHO1LstZe326kB4hDTRBW7LpOMQCKonrrD_KE0_EvWW6guQ4UOyia1H2mziecpWplcMMpQpuW3L9Fc55kWgyOlay0Ex6gH8nbXIUP7lmIOwFWqOMQKpaNM2li9-2KjWMfsTY4nXBjqluRCcxyDTjBQO3F-9BcK-oWSD9JrwfltiJJTB0wGK35ATmllmH0APG9lbJ4ChdCt9jRkdJ5g2EqXzXGxFw1Bk81zEnpE2ck1hGrBntxECs3SLmT7lSvqk01Lqh1lOLEEiTJ4K5gCZjiEVvSMcjxHVZrfcsC7gNsdFYluDlOatJ9LQHpV_y6GwxWd_acJu-9i6m0XPn8IFDwtIjcus1DjAFgjoAhVmydDMoQSSZyQ8MqV0gY4H-27Ozw
 
 @Restaurants.API_HostAddress = https://localhost:7133
 ###
@@ -18,6 +18,7 @@ DELETE {{Restaurants.API_HostAddress}}/api/restaurants/145
 ###
 
 POST {{Restaurants.API_HostAddress}}/api/restaurants
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
@@ -96,7 +97,7 @@ POST {{Restaurants.API_HostAddress}}/api/identity/register
 Content-Type: application/json
 
 {
-  "email": "kwsabas07@gmail.com",
+  "email": "user@test.com",
   "password": "Password1!"
 }
 
@@ -106,6 +107,6 @@ POST {{Restaurants.API_HostAddress}}/api/identity/login
 Content-Type: application/json
 
 {
-  "email": "kwsabas07@gmail.com",
+  "email": "admin@test.com",
   "password": "Password1!"
 }
