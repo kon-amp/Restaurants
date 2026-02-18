@@ -51,14 +51,14 @@ internal static class WebApplicationExtensions {
         // Redirect all HTTP requests to HTTPS for security.
         app.UseHttpsRedirection();
 
+        app.UseAuthentication();
+        // Add authorization middleware (checks user access before hitting controllers).
+        app.UseAuthorization();
+
         // Expose Endpoints to register the user to login,reset password, etc
         app.MapGroup("api/identity")
            .WithTags("Identity")
            .MapIdentityApi<ApplicationUser>();
-
-        app.UseAuthentication();
-        // Add authorization middleware (checks user access before hitting controllers).
-        app.UseAuthorization();
 
         // Map controller endpoints so they can handle incoming HTTP requests.
         app.MapControllers();

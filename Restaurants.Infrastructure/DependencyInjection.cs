@@ -25,12 +25,13 @@ public static class DependencyInjection {
 
     public static IServiceCollection AddIdentityLayer(this IServiceCollection services) {
         services.AddIdentityApiEndpoints<ApplicationUser>()
-                .AddEntityFrameworkStores<RestaurantsDbContext>()
-                .AddRoles<IdentityRole>();
-
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<RestaurantsDbContext>();
 
         services.AddScoped<IApplicationUser, ApplicationUser>();
         services.AddScoped<IApplicationUserStore, ApplicationUserStore>();
+        services.AddScoped<IApplicationUserManager, ApplicationUserManager>();
+        services.AddScoped<IApplicationRoleManager, ApplicationRoleManager>();
 
         return services;
     }

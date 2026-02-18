@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using Restaurants.Application.Abstractions.User;
 using Restaurants.Domain.Exceptions;
 
-namespace Restaurants.Application.User.Commands;
+namespace Restaurants.Application.User.Commands.UpdateUserDetails;
 
 public class UpdateUserDetailsCommandHandler(ILogger<UpdateUserDetailsCommandHandler> logger,
     IUserContext userContext,

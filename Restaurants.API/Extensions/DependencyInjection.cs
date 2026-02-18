@@ -1,14 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Restaurants.API.Filters;
 using Restaurants.API.Middlewares;
-using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace Restaurants.API.Extensions;
 public static class DependencyInjection {
     public static IServiceCollection AddPresentationLayer(this IServiceCollection services) {
         services.AddAuthentication();
-        
+
         services
             .AddControllers(options => {
                 options.Filters.Add<ValidationFilter>();

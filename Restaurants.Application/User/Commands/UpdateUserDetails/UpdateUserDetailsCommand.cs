@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Restaurants.Application.User.Commands; 
+namespace Restaurants.Application.User.Commands.UpdateUserDetails; 
 public class UpdateUserDetailsCommand : IRequest {
     public DateOnly? DateOfBirth { get; set; }
 
