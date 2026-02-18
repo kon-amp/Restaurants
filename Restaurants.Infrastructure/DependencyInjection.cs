@@ -24,6 +24,8 @@ public static class DependencyInjection {
     }
 
     public static IServiceCollection AddIdentityLayer(this IServiceCollection services) {
+        // Remember that roles must be added before the stores,
+        // otherwise the stores won't be able to find the role manager and will throw an exception
         services.AddIdentityApiEndpoints<ApplicationUser>()
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<RestaurantsDbContext>();
