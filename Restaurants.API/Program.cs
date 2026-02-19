@@ -1,8 +1,10 @@
 using Restaurants.API.Extensions;
 
-namespace Restaurants.API; 
-public class Program {
-    public static async Task Main(string[] args) {
+namespace Restaurants.API;
+public static class Program
+{
+    public static async Task Main(string[] args)
+    {
         var builder = WebApplication.CreateBuilder(args);
 
         var app = await builder.ConfigureServices().ConfigurePipeline();

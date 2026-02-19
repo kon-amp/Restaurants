@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Restaurants.API.Exceptions;
 using Restaurants.API.Filters;
 using Restaurants.API.Middlewares;
 using System.Text;
@@ -12,9 +13,7 @@ public static class DependencyInjection {
         services.AddAuthentication();
 
         services
-            .AddControllers(options => {
-                options.Filters.Add<ValidationFilter>();
-            })
+            .AddControllers()
             .ConfigureApiBehaviorOptions(options => {
                 // Disable automatic [ApiController] model validation (DataAnnotations)
                 // so you can handle validation manually or via FluentValidation.
@@ -53,7 +52,9 @@ public static class DependencyInjection {
         // Identity Endpoints are minimalAPI so we have to make them visible
         services.AddEndpointsApiExplorer();
 
-        services.AddScoped<ErrorHandlingMiddleware>();
+        services.AddProblemDetails();
+        services.AddExceptionHandler<GlobalExceptionHandler>();
+        
         services.AddScoped<RequestTimeLoggingMiddleware>();
 
         return services;

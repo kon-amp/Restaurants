@@ -26,7 +26,7 @@ public class RestaurantsController(
     // If we keep IActionResult as return type then -> 
     // [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<RestaurantDto>))]
     public async Task<ActionResult<IEnumerable<RestaurantDto>>> GetAll() {
-        //var restaurants = await restaurantsService.GetAllRestaurants();
+        //var restaurants = await restaurantsService.GetAllRestaurants(); // NOSONAR
         var restaurants = await mediator.Send(new GetAllRestaurantsQuery());
         return Ok(restaurants);
     }
@@ -56,14 +56,14 @@ public class RestaurantsController(
     }
 
     [HttpPost]
-    [Authorize(Roles = UserRoles.Owner)]
+    [Authorize(Roles = UserRoles.Admin)]
     public async Task<IActionResult> CreateRestaurant([FromBody] CreateRestaurantCommand command) {
         #region Manual request validation (used if [ApiController] is not applied)
-        // If the [ApiController] attribute isn’t used, we need to manually check 
-        // whether the ModelState is valid before processing the request.
-        //if (!ModelState.IsValid) {
-        //    return BadRequest(ModelState);
-        //}
+        // Kept here for reference, but it’s not needed in this case
+        // because we have [ApiController] applied to the controller.  
+        // if (!ModelState.IsValid) {               // NOSONAR
+        //     return BadRequest(ModelState);       // NOSONAR 
+        // }                                        // NOSONAR
         #endregion
         int id = await mediator.Send(command);
         return CreatedAtAction(nameof(GetById), new { id }, null);

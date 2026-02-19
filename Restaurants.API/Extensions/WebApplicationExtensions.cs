@@ -43,7 +43,9 @@ internal static class WebApplicationExtensions {
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Restaurants"));
         }
 
-        app.UseMiddleware<ErrorHandlingMiddleware>();
+        // Global error handling middleware.
+        app.UseExceptionHandler(); 
+
         app.UseMiddleware<RequestTimeLoggingMiddleware>();
 
         app.UseSerilogRequestLogging();

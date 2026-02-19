@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Restaurants.Application.Abstractions.User;
 using Restaurants.Application.User;
@@ -16,8 +17,9 @@ public static class DependencyInjection {
 
         services.AddValidatorsFromAssembly(applicationAssembly);
 
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(Behavior.ValidationBehavior<,>));
+
         services.AddScoped<IUserContext, UserContext>();
-        
 
         return services;
     }

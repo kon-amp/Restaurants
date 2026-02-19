@@ -4,17 +4,43 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Restaurants.API.Filters;
 
+
 /// <summary>
-/// A global ASP.NET Core action filter that automatically validates 
-/// controller action arguments using FluentValidation.
+/// A global ASP.NET Core action filter that automatically performs 
+/// FluentValidation validation on controller action parameters.
 /// </summary>
 /// <remarks>
-/// This filter executes before a controller action runs. 
-/// It uses the built-in dependency injection container (<see cref="IServiceProvider"/>) 
-/// to locate any registered <see cref="IValidator{T}"/> that matches the action parameter type.
-/// If validation fails, it short-circuits the pipeline and returns a <see cref="BadRequestObjectResult"/> 
-/// with detailed validation errors in the standard <see cref="ValidationProblemDetails"/> format.
+/// <para>
+/// This filter runs before a controller action executes. It uses the built-in 
+/// dependency injection container (<see cref="IServiceProvider"/>) to locate any 
+/// registered <see cref="IValidator{T}"/> that matches the action parameter types.
+/// </para>
+/// <para>
+/// If validation fails, the filter short-circuits the pipeline and returns a 
+/// <see cref="BadRequestObjectResult"/> containing a standard 
+/// <see cref="ValidationProblemDetails"/> response.
+/// </para>
+/// 
+/// <h3>How to register / instantiate</h3>
+/// <para>
+/// To enable this filter globally for all controllers, register it in 
+/// <c>Program.cs</c> using <c>options.Filters.Add&lt;ValidationFilter&gt;()</c>:
+/// </para>
+/// <code>
+/// services
+///     .AddControllers(options =>
+///     {
+///         options.Filters.Add&lt;ValidationFilter&gt;();
+///     });
+/// </code>
+/// 
+/// <para>
+/// Note: This approach fits traditional controller-based validation.  
+/// In Clean Architecture with the Mediator pattern, prefer validation via 
+/// MediatR pipeline behaviors instead.
+/// </para>
 /// </remarks>
+[Obsolete("Not recommended for Clean Architecture. Prefer MediatR pipeline validation instead.")]
 public class ValidationFilter(IServiceProvider serviceProvider) : IAsyncActionFilter {
     public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next) {
         // Iterate through all arguments passed to the controller action.
