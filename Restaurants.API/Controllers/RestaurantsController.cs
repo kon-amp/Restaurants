@@ -56,7 +56,7 @@ public class RestaurantsController(
     }
 
     [HttpPost]
-    [Authorize(Roles = UserRoles.Admin)]
+    [Authorize(Roles = UserRoles.Owner)]
     public async Task<IActionResult> CreateRestaurant([FromBody] CreateRestaurantCommand command) {
         #region Manual request validation (used if [ApiController] is not applied)
         // Kept here for reference, but it’s not needed in this case
