@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Restaurants.Application.Abstractions.Repositories;
 using Restaurants.Application.Abstractions.User;
+using Restaurants.Infrastructure.Authorization;
 using Restaurants.Infrastructure.Identity;
 using Restaurants.Infrastructure.Persistence;
 using Restaurants.Infrastructure.Repositories;
@@ -30,6 +31,7 @@ public static class DependencyInjection {
         // otherwise the stores won't be able to find the role manager and will throw an exception
         services.AddIdentityApiEndpoints<ApplicationUser>()
                 .AddRoles<IdentityRole>()
+                .AddClaimsPrincipalFactory<RestaurantsUserClaimsPrincipalFactory>()
                 .AddEntityFrameworkStores<RestaurantsDbContext>();
 
         services.AddScoped<IApplicationUser, ApplicationUser>();
