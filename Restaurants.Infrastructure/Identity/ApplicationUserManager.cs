@@ -29,4 +29,14 @@ public class ApplicationUserManager : IApplicationUserManager {
         return result.Succeeded;
     }
 
+    public async Task<bool> RemoveFromRoleAsync(string userId, string roleName) {
+        var user = await _userManager.FindByIdAsync(userId);
+
+        if (user == null)
+            return false;
+
+        var result = await _userManager.RemoveFromRoleAsync(user, roleName);
+        return result.Succeeded;
+    }
+
 }
