@@ -1,0 +1,336 @@
+
+=== DIRECTORY TREE (max depth 3, source files only) ===
+.github
+.github\copilot-instructions.md
+.github\skills
+.github\skills\acquire-codebase-knowledge
+.github\skills\acquire-codebase-knowledge\assets
+.github\skills\acquire-codebase-knowledge\references
+.github\skills\acquire-codebase-knowledge\scripts
+.github\skills\acquire-codebase-knowledge\SKILL.md
+.github\workflows
+.gitignore
+.vs
+.vs\ProjectEvaluation
+.vs\ProjectEvaluation\restaurants.metadata.v10.bin
+.vs\ProjectEvaluation\restaurants.projects.v10.bin
+.vs\ProjectEvaluation\restaurants.strings.v10.bin
+.vs\Restaurants
+.vs\Restaurants\config
+.vs\Restaurants\config\applicationhost.config
+.vs\Restaurants\copilot-chat
+.vs\Restaurants\copilot-chat\3c006a31
+.vs\Restaurants\CopilotIndices
+.vs\Restaurants\CopilotIndices\17.14.1584.41681
+.vs\Restaurants\CopilotIndices\17.14.1593.33849
+.vs\Restaurants\CopilotIndices\18.9.1311.36310
+.vs\Restaurants\DesignTimeBuild
+.vs\Restaurants\DesignTimeBuild\.dtbcache.v2
+.vs\Restaurants\FileContentIndex
+.vs\Restaurants\FileContentIndex\5ac02eda-ccbb-4d33-afd8-2fd534a65332.vsidx
+.vs\Restaurants\v17
+.vs\Restaurants\v17\.futdcache.v2
+.vs\Restaurants\v17\.suo
+.vs\Restaurants\v17\DocumentLayout.backup.json
+.vs\Restaurants\v17\DocumentLayout.json
+.vs\Restaurants\v17\TestStore
+.vs\Restaurants\v18
+.vs\Restaurants\v18\.futdcache.v2
+.vs\Restaurants\v18\.suo
+.vs\Restaurants\v18\DocumentLayout.json
+.vs\sd
+docs
+docs\codebase
+docs\codebase\.codebase-scan.txt
+README.md
+Restaurants.API
+Restaurants.API\appsettings.Development.json
+Restaurants.API\appsettings.json
+Restaurants.API\Controllers
+Restaurants.API\Controllers\DishesController.cs
+Restaurants.API\Controllers\IdentityController.cs
+Restaurants.API\Controllers\RestaurantsController.cs
+Restaurants.API\Exceptions
+Restaurants.API\Exceptions\GlobalExceptionHandler.cs
+Restaurants.API\Extensions
+Restaurants.API\Extensions\DependencyInjection.cs
+Restaurants.API\Extensions\WebApplicationExtensions.cs
+Restaurants.API\Filters
+Restaurants.API\Filters\ValidationFilter.cs
+Restaurants.API\Logs
+Restaurants.API\Logs\Restaurants-API-20251023.log
+Restaurants.API\Logs\Restaurants-API-20251027.log
+Restaurants.API\Logs\Restaurants-API-20251203.log
+Restaurants.API\Logs\Restaurants-API-20251204.log
+Restaurants.API\Logs\Restaurants-API-20260218.log
+Restaurants.API\Logs\Restaurants-API-20260219.log
+Restaurants.API\Middlewares
+Restaurants.API\Middlewares\ErrorHandlingMiddleware.cs
+Restaurants.API\Middlewares\RequestTimeLoggingMiddleware.cs
+Restaurants.API\Program.cs
+Restaurants.API\Properties
+Restaurants.API\Properties\launchSettings.json
+Restaurants.API\Restaurants.API.csproj
+Restaurants.API\Restaurants.API.csproj.user
+Restaurants.API\Restaurants.API.http
+Restaurants.Application
+Restaurants.Application\Abstractions
+Restaurants.Application\Abstractions\Repositories
+Restaurants.Application\Abstractions\Repositories\IDishesRepository.cs
+Restaurants.Application\Abstractions\Repositories\IRestaurantsRepository.cs
+Restaurants.Application\Abstractions\User
+Restaurants.Application\Abstractions\User\IApplicationRoleManager.cs
+Restaurants.Application\Abstractions\User\IApplicationUser.cs
+Restaurants.Application\Abstractions\User\IApplicationUserManager.cs
+Restaurants.Application\Abstractions\User\IApplicationUserStore.cs
+Restaurants.Application\Abstractions\User\IUserContext.cs
+Restaurants.Application\Behavior
+Restaurants.Application\Behavior\ValidationBehavior.cs
+Restaurants.Application\DependencyInjection.cs
+Restaurants.Application\Dishes
+Restaurants.Application\Dishes\Commands
+Restaurants.Application\Dishes\Commands\CreateDish
+Restaurants.Application\Dishes\Commands\DeleteDishes
+Restaurants.Application\Dishes\Dtos
+Restaurants.Application\Dishes\Dtos\DishDto.cs
+Restaurants.Application\Dishes\Dtos\DishesProfile.cs
+Restaurants.Application\Dishes\Queries
+Restaurants.Application\Dishes\Queries\GetDishByIdForRestaurant
+Restaurants.Application\Dishes\Queries\GetDishesForRestaurant
+Restaurants.Application\Restaurants
+Restaurants.Application\Restaurants\Commands
+Restaurants.Application\Restaurants\Commands\CreateRestaurant
+Restaurants.Application\Restaurants\Commands\DeleteRestaurant
+Restaurants.Application\Restaurants\Commands\UpdateRestaurant
+Restaurants.Application\Restaurants\Dtos
+Restaurants.Application\Restaurants\Dtos\CreateRestaurantDto.cs
+Restaurants.Application\Restaurants\Dtos\RestaurantDto.cs
+Restaurants.Application\Restaurants\Dtos\RestaurantsProfile.cs
+Restaurants.Application\Restaurants\IRestaurantsService.cs
+Restaurants.Application\Restaurants\Queries
+Restaurants.Application\Restaurants\Queries\GetAllRestaurants
+Restaurants.Application\Restaurants\Queries\GetRestaurantById
+Restaurants.Application\Restaurants\RestaurantsService.cs
+Restaurants.Application\Restaurants.Application.csproj
+Restaurants.Application\User
+Restaurants.Application\User\Commands
+Restaurants.Application\User\Commands\AssignUserRole
+Restaurants.Application\User\Commands\UnnasignUserRole
+Restaurants.Application\User\Commands\UpdateUserDetails
+Restaurants.Application\User\CurrentUser.cs
+Restaurants.Application\User\UserContext.cs
+Restaurants.Domain
+Restaurants.Domain\Constants
+Restaurants.Domain\Constants\UserRoles.cs
+Restaurants.Domain\Entities
+Restaurants.Domain\Entities\Address.cs
+Restaurants.Domain\Entities\Dish.cs
+Restaurants.Domain\Entities\Restaurant.cs
+Restaurants.Domain\Exceptions
+Restaurants.Domain\Exceptions\NotFoundException.cs
+Restaurants.Domain\Exceptions\ValidationException.cs
+Restaurants.Domain\Restaurants.Domain.csproj
+Restaurants.Infrastructure
+Restaurants.Infrastructure\Authorization
+Restaurants.Infrastructure\Authorization\RestaurantsUserClaimsPrincipalFactory.cs
+Restaurants.Infrastructure\DependencyInjection.cs
+Restaurants.Infrastructure\Identity
+Restaurants.Infrastructure\Identity\ApplicationRoleManager.cs
+Restaurants.Infrastructure\Identity\ApplicationUser.cs
+Restaurants.Infrastructure\Identity\ApplicationUserManager.cs
+Restaurants.Infrastructure\Identity\ApplicationUserStore.cs
+Restaurants.Infrastructure\Migrations
+Restaurants.Infrastructure\Migrations\20250811093352_Init.cs
+Restaurants.Infrastructure\Migrations\20250811093352_Init.Designer.cs
+Restaurants.Infrastructure\Migrations\20251013115106_KiloCaloriesAddedToDish.cs
+Restaurants.Infrastructure\Migrations\20251013115106_KiloCaloriesAddedToDish.Designer.cs
+Restaurants.Infrastructure\Migrations\20251204111905_IdentityAdded.cs
+Restaurants.Infrastructure\Migrations\20251204111905_IdentityAdded.Designer.cs
+Restaurants.Infrastructure\Migrations\20251204131235_UserAdditionalPropertiesAdded.cs
+Restaurants.Infrastructure\Migrations\20251204131235_UserAdditionalPropertiesAdded.Designer.cs
+Restaurants.Infrastructure\Migrations\RestaurantsDbContextModelSnapshot.cs
+Restaurants.Infrastructure\Persistence
+Restaurants.Infrastructure\Persistence\RestaurantsDbContext.cs
+Restaurants.Infrastructure\Repositories
+Restaurants.Infrastructure\Repositories\DishesRepository.cs
+Restaurants.Infrastructure\Repositories\RestaurantsRepository.cs
+Restaurants.Infrastructure\Restaurants.Infrastructure.csproj
+Restaurants.Infrastructure\Seeders
+Restaurants.Infrastructure\Seeders\IRestaurantSeeder.cs
+Restaurants.Infrastructure\Seeders\RestaurantSeeder.cs
+Restaurants.sln
+
+=== STACK DETECTION (manifest files) ===
+
+--- Restaurants.sln ---
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.API", "Restaurants.API\Restaurants.API.csproj", "{496C6D9C-916A-448F-BF73-432A2A823A8F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2CCC9061-4CCF-445B-96AB-5D830C5A5E4D} = {2CCC9061-4CCF-445B-96AB-5D830C5A5E4D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Domain", "Restaurants.Domain\Restaurants.Domain.csproj", "{AD929DFC-FD0A-4130-8FCE-6F5E22F5281D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Application", "Restaurants.Application\Restaurants.Application.csproj", "{9938F5A6-6660-42D1-B337-5699FC32BC64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Infrastructure", "Restaurants.Infrastructure\Restaurants.Infrastructure.csproj", "{2CCC9061-4CCF-445B-96AB-5D830C5A5E4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{496C6D9C-916A-448F-BF73-432A2A823A8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{496C6D9C-916A-448F-BF73-432A2A823A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{496C6D9C-916A-448F-BF73-432A2A823A8F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{496C6D9C-916A-448F-BF73-432A2A823A8F}.Debug|x64.Build.0 = Debug|Any CPU
+		{496C6D9C-916A-448F-BF73-432A2A823A8F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{496C6D9C-916A-448F-BF73-432A2A823A8F}.Debug|x86.Build.0 = Debug|Any CPU
+		{496C6D9C-916A-448F-BF73-432A2A823A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{496C6D9C-916A-448F-BF73-432A2A823A8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{496C6D9C-916A-448F-BF73-432A2A823A8F}.Release|x64.ActiveCfg = Release|Any CPU
+		{496C6D9C-916A-448F-BF73-432A2A823A8F}.Release|x64.Build.0 = Release|Any CPU
+		{496C6D9C-916A-448F-BF73-432A2A823A8F}.Release|x86.ActiveCfg = Release|Any CPU
+		{496C6D9C-916A-448F-BF73-432A2A823A8F}.Release|x86.Build.0 = Release|Any CPU
+		{AD929DFC-FD0A-4130-8FCE-6F5E22F5281D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD929DFC-FD0A-4130-8FCE-6F5E22F5281D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD929DFC-FD0A-4130-8FCE-6F5E22F5281D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AD929DFC-FD0A-4130-8FCE-6F5E22F5281D}.Debug|x64.Build.0 = Debug|Any CPU
+		{AD929DFC-FD0A-4130-8FCE-6F5E22F5281D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AD929DFC-FD0A-4130-8FCE-6F5E22F5281D}.Debug|x86.Build.0 = Debug|Any CPU
+		{AD929DFC-FD0A-4130-8FCE-6F5E22F5281D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD929DFC-FD0A-4130-8FCE-6F5E22F5281D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD929DFC-FD0A-4130-8FCE-6F5E22F5281D}.Release|x64.ActiveCfg = Release|Any CPU
+		{AD929DFC-FD0A-4130-8FCE-6F5E22F5281D}.Release|x64.Build.0 = Release|Any CPU
+		{AD929DFC-FD0A-4130-8FCE-6F5E22F5281D}.Release|x86.ActiveCfg = Release|Any CPU
+		{AD929DFC-FD0A-4130-8FCE-6F5E22F5281D}.Release|x86.Build.0 = Release|Any CPU
+		{9938F5A6-6660-42D1-B337-5699FC32BC64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9938F5A6-6660-42D1-B337-5699FC32BC64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9938F5A6-6660-42D1-B337-5699FC32BC64}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9938F5A6-6660-42D1-B337-5699FC32BC64}.Debug|x64.Build.0 = Debug|Any CPU
+		{9938F5A6-6660-42D1-B337-5699FC32BC64}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9938F5A6-6660-42D1-B337-5699FC32BC64}.Debug|x86.Build.0 = Debug|Any CPU
+		{9938F5A6-6660-42D1-B337-5699FC32BC64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9938F5A6-6660-42D1-B337-5699FC32BC64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9938F5A6-6660-42D1-B337-5699FC32BC64}.Release|x64.ActiveCfg = Release|Any CPU
+		{9938F5A6-6660-42D1-B337-5699FC32BC64}.Release|x64.Build.0 = Release|Any CPU
+		{9938F5A6-6660-42D1-B337-5699FC32BC64}.Release|x86.ActiveCfg = Release|Any CPU
+		{9938F5A6-6660-42D1-B337-5699FC32BC64}.Release|x86.Build.0 = Release|Any CPU
+		{2CCC9061-4CCF-445B-96AB-5D830C5A5E4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CCC9061-4CCF-445B-96AB-5D830C5A5E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CCC9061-4CCF-445B-96AB-5D830C5A5E4D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2CCC9061-4CCF-445B-96AB-5D830C5A5E4D}.Debug|x64.Build.0 = Debug|Any CPU
+		{2CCC9061-4CCF-445B-96AB-5D830C5A5E4D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2CCC9061-4CCF-445B-96AB-5D830C5A5E4D}.Debug|x86.Build.0 = Debug|Any CPU
+		{2CCC9061-4CCF-445B-96AB-5D830C5A5E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CCC9061-4CCF-445B-96AB-5D830C5A5E4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CCC9061-4CCF-445B-96AB-5D830C5A5E4D}.Release|x64.ActiveCfg = Release|Any CPU
+		{2CCC9061-4CCF-445B-96AB-5D830C5A5E4D}.Release|x64.Build.0 = Release|Any CPU
+		{2CCC9061-4CCF-445B-96AB-5D830C5A5E4D}.Release|x86.ActiveCfg = Release|Any CPU
+		{2CCC9061-4CCF-445B-96AB-5D830C5A5E4D}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0125661-CDF0-4CE6-958A-41CD094B9E72}
+
+[TRUNCATED] Showing first 80 of 82 lines.
+
+=== ENTRY POINTS ===
+No common entry points found. Check 'main' or 'scripts.start' in manifest files above.
+
+=== LINTING AND FORMATTING CONFIG ===
+No linting or formatting config files found in project root.
+
+=== ENVIRONMENT VARIABLE TEMPLATES ===
+No .env.example or .env.template found. Identify required environment variables by searching the code and config for environment variable reads.
+
+=== TODO / FIXME / HACK (production code only, test dirs excluded) ===
+.github\skills\acquire-codebase-knowledge\scripts\scan.py:28: TODO_LIMIT = 60
+.github\skills\acquire-codebase-knowledge\scripts\scan.py:291: """Search for TODO/FIXME/HACK comments."""
+.github\skills\acquire-codebase-knowledge\scripts\scan.py:291: """Search for TODO/FIXME/HACK comments."""
+.github\skills\acquire-codebase-knowledge\scripts\scan.py:291: """Search for TODO/FIXME/HACK comments."""
+.github\skills\acquire-codebase-knowledge\scripts\scan.py:293: patterns = ["TODO", "FIXME", "HACK"]
+.github\skills\acquire-codebase-knowledge\scripts\scan.py:293: patterns = ["TODO", "FIXME", "HACK"]
+.github\skills\acquire-codebase-knowledge\scripts\scan.py:293: patterns = ["TODO", "FIXME", "HACK"]
+.github\skills\acquire-codebase-knowledge\scripts\scan.py:320: return todos[:TODO_LIMIT]
+.github\skills\acquire-codebase-knowledge\scripts\scan.py:617: # TODOs
+.github\skills\acquire-codebase-knowledge\scripts\scan.py:620: print_section("TODO / FIXME / HACK (production code only, test dirs excluded)", todos, output_file)
+.github\skills\acquire-codebase-knowledge\scripts\scan.py:620: print_section("TODO / FIXME / HACK (production code only, test dirs excluded)", todos, output_file)
+.github\skills\acquire-codebase-knowledge\scripts\scan.py:620: print_section("TODO / FIXME / HACK (production code only, test dirs excluded)", todos, output_file)
+.github\skills\acquire-codebase-knowledge\scripts\scan.py:622: print_section("TODO / FIXME / HACK (production code only, test dirs excluded)", ["None found."], output_file)
+.github\skills\acquire-codebase-knowledge\scripts\scan.py:622: print_section("TODO / FIXME / HACK (production code only, test dirs excluded)", ["None found."], output_file)
+.github\skills\acquire-codebase-knowledge\scripts\scan.py:622: print_section("TODO / FIXME / HACK (production code only, test dirs excluded)", ["None found."], output_file)
+
+=== GIT RECENT COMMITS (last 20) ===
+1f344cc add custom claims by extending UserClaimsPrincipalFactory
+f83ea72 add validators for assing and unassing user role
+60bcadd add endpoint to unnasign user role
+b5cb55d minor
+78f69f9 refactor firstly Global Handling Errors utilizing IExceptionHandler and fluent validation though pipeline and not filter
+09eaa0b change AspNetCore framework from application layer to infrastructure layer and fix some warnings
+4df9286 minor comment addition
+5e9bb97 add endpoint for assigning user roles
+d8948c2 add user role based authorization
+9788b94 Extend rser definition class as also application user store
+5ede957 add user context at the application layer
+3a1eaa5 authenitcation setup
+18c1681 add swagger support of identity authentication
+fe93228 add basic identity infrastructure to the project
+bfbfa2d location header for subentity
+a3a66e9 remove all dishes from a requested restaurant
+667806e retrieving subentities like dish
+c4aca70 creating subentities - create a new dish for a restaurant
+010ee43 minor reformat
+fc42aa7 add logging middelware for getting information if a request took more than 4 seconds to execute
+
+=== HIGH-CHURN FILES (last 90 days, top 20) ===
+None found.
+
+=== MONOREPO SIGNALS ===
+No monorepo signals detected.
+
+=== CODE METRICS ===
+Total files scanned: 129
+Total lines of code: 4751
+
+Files by language:
+  C#: 83
+  Other: 45
+  Python: 1
+
+Top 10 largest files:
+.vs\Restaurants\CopilotIndices\18.9.1311.36310\SemanticSymbols.db-wal: 4095.9KB
+.vs\Restaurants\DesignTimeBuild\.dtbcache.v2: 362.2KB
+Restaurants.API\Logs\Restaurants-API-20260218.log: 332.7KB
+.vs\Restaurants\CopilotIndices\18.9.1311.36310\SemanticSymbols.db: 280.0KB
+.vs\Restaurants\FileContentIndex\5ac02eda-ccbb-4d33-afd8-2fd534a65332.vsidx: 255.1KB
+.vs\ProjectEvaluation\restaurants.strings.v10.bin: 208.2KB
+.vs\ProjectEvaluation\restaurants.projects.v10.bin: 114.1KB
+.vs\Restaurants\config\applicationhost.config: 83.5KB
+Restaurants.API\Logs\Restaurants-API-20260219.log: 71.4KB
+Restaurants.API\Logs\Restaurants-API-20251204.log: 65.8KB
+
+=== CI/CD PIPELINES ===
+No CI/CD pipelines detected.
+
+=== CONTAINERS & ORCHESTRATION ===
+No containerization configs detected.
+
+=== SECURITY & COMPLIANCE ===
+No security configs detected.
+
+=== PERFORMANCE & TESTING ===
+No performance testing configs detected.
+
+=== SCAN COMPLETE ===
